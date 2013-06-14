@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :assets, as: :borrower
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable, :registerable, :recoverable, :rememberable, and :omniauthable

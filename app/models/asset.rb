@@ -1,6 +1,8 @@
 class Asset < ActiveRecord::Base
   attr_accessible :name, :description
 
+  belongs_to :borrower, polymorphic: true
+
   before_create :set_uuid
 
   BORROWED = "borrowed"
@@ -14,8 +16,8 @@ class Asset < ActiveRecord::Base
     self.status == "available"
   end
 
-  def borrow_for(borrowed_id)
-    self.borrower_id = borrower_id
+  def borrow_for(borrowed)
+    self.borrower = borrower
     self.status = Asset::BORROWED
     self.save!
   end
