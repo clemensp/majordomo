@@ -1,9 +1,24 @@
+a {
+	color: $btn-color;
+
+	:hover {
+	color: $btn-color-focus;
+	}
+
+}
+
 .top-bar {
 	background: $subtle-gray;
+	border-bottom: 2px solid rgba(0,0,0,0.1);
+	height: 55px;
 
 li {
 	background: $subtle-gray;
 }
+
+	.top-bar-section ul {
+		background: $subtle-gray;
+	}
 
 
 	.top-bar-section li a:not(.button) {
@@ -13,10 +28,7 @@ li {
 	color: #bc6c5e;
 	}
 
-	.top-bar-section > ul > .divider {
-		border-left: 1px rgba(0,0,0,0.3) solid;
-		border-right: 1px rgba(0,0,0,0.3) solid;
-	}
+
 }
 
 .top-bar-section .has-form {
@@ -29,6 +41,13 @@ li {
 	height: 39px;
 	text-indent: -100000em;
 }
+
+@media only screen and (max-width: 920px) {
+	.top-bar-section ul li {
+		border-bottom: 1px solid rgba(0,0,0,0.3);
+	}
+}
+
 
  
 
@@ -47,9 +66,8 @@ li {
 	.left li:first-child {
 		margin-right: 10px;
 	}
-}
 
-.nav-link a, #sign_in_link {
+	.nav-link a, #sign_in_link {
 
 border: none;
 font-family: inherit;
@@ -76,7 +94,81 @@ color: $btn-color;
 }
 
 }
+}
+
+
 
 #sign_in_link {
 	padding: 20px;
+}
+
+h1 {
+	font-family: $montserrat;
+	color: $header;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding-bottom: 10px;
+}
+
+form {
+	label {
+		font-weight: bold;
+		text-transform: uppercase;
+		border-bottom: rgba(0,0,0,0.3) dotted 1px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	textarea {
+		height: 100px;
+	}
+
+
+
+	input[type="text"],textarea {
+		margin-top: 10px;		
+		font-size: 18px;
+		border: 2px solid rgba(0,0,0,0.3);
+
+		&:hover {
+			color: $form-focus-color;
+			border: 2px solid $form-focus-color;
+		}
+
+	}
+
+	
+}
+
+.button {
+	border: none;
+font-family: inherit;
+font-size: inherit;
+color: inherit;
+background: none;
+cursor: pointer;
+padding: 15px;
+display: inline-block;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-weight: 700;
+outline: none;
+position: relative;
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+transition: all 0.3s;
+border: 3px solid $btn-color;
+color: $btn-color;
+
+&:hover {
+	background: $btn-color !important;
+	color: white !important;
+}
+}
+
+#welcome {
+  font-size: 72px;
+  background: -webkit-linear-gradient($header, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1em;
+
 }

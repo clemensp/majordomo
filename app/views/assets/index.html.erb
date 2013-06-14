@@ -1,8 +1,10 @@
-<h1>Assets</h1>
+<section class="row">
+<div class="large-12 columns">
+	<h1>Assets</h1>
+</div>
 
-
-
-<table width="100%">
+<div class="large-12 columns">
+	<table width="100%">
   <thead>
     <th>
       Name
@@ -32,4 +34,15 @@
   <% end %>
 </table>
 
-<%= link_to "Create", new_asset_path(@asset) %>
+
+<%= link_to "Create", new_asset_path(@asset), :class => "button" %>
+
+</div>
+
+
+
+</section>
+
+
+
+

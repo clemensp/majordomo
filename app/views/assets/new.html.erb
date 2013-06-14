@@ -1,5 +1,15 @@
-<%= form_for @asset do %>
-  <%= render partial: "fields" %>
+<section class="row">
+<div class="large-12 columns">
 
-  <input type="submit" value="Add!" />
-<% end %>
+	<h1>Create a new Asset</h1>
+
+	<%= form_for @asset do %>
+	<%= render partial: "fields" %>
+
+	<input type="submit" value="Add!" class="button" style="margin-top: 10px;" />
+	<% end %>
+
+
+</div>
+</section>
+

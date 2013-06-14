@@ -1,29 +1,55 @@
-<h1>Borrow Asset: <%= @asset.name %></h1>
+<section class="row">
+<div class="large-12 columns">
 
-<label>
-  Description: <%= @asset.description %>
-</label>
-
-<label>
-  Status: <%= @asset.status %>
-</label>
-
-<br />
-<br />
+  <h1>Borrow Asset: <%= @asset.name %></h1>
 
 
-<% if @asset.available? %>
-  <form action="<%= borrow_asset_path(@asset) %>" method="POST">
-    Enter your name:
-    <input type="text" name="asset[borrowed_id]" />
-    <input type="submit" value="Borrow!" />
-  </form>
-<% else %>
-  <label>
-    Borrowed by: <%= @asset.borrower_id %>
-  </label>
+  <span class="label-value">Description:</span>
+  <p class="value"><%= @asset.description %></p>
 
-  <form action="<%= return_asset_path(@asset) %>" method="POST">
-    <input type="submit" value="Return!" />
-  </form>
-<% end %>
+  <span class="label-value">Asset status:</span>
+  <p class="value"><%= @asset.status %></p>
+
+
+
+
+<hr>
+
+</div>
+</section>
+
+<section class="row">
+
+<div class="large-12 columns">
+  <% if @asset.available? %>
+    <form action="<%= borrow_asset_path(@asset) %>" method="POST">
+        <label>Enter your name:
+        <input type="text" name="asset[borrowed_id]" />
+        </label>
+
+      <hr>
+
+      <input type="submit" value="Borrow!" class="button" />
+    </form>
+  <% else %>
+    <label>
+      Borrowed by: <%= @asset.borrower_id %>
+    </label>
+
+    <form action="<%= return_asset_path(@asset) %>" method="POST">
+
+      <hr>
+
+
+      <input type="submit" value="Return!" class="button" />
+    </form>
+  <% end %>
+</div>
+</section>
+
+
+
+
+
+
+
