@@ -1,1 +1,20 @@
-Hello!!
+<section class="row">
+
+<section class="large-7 columns">
+<h2 id="welcome">
+	Create Assets<br>
+	Track Assets<br>
+	Borrow Assets<br>
+</h2>
+</section>
+
+<section class="large-5 columns">
+<h3 id="summary">Welcome to Majordomo</h3>
+
+<p>Majordomo is a simple asset tracking application for all of Nulogy's assets and staff. Sign in with your Nulogy google account to get started</p>
+
+	 <%= link_to "Sign in", user_omniauth_authorize_url(provider: "google"), :id => "sign_in_link" %>
+
+</section>
+
+</section>
