@@ -1,0 +1,82 @@
+.top-bar {
+	background: $subtle-gray;
+
+li {
+	background: $subtle-gray;
+}
+
+
+	.top-bar-section li a:not(.button) {
+	background: $subtle-gray;
+	background: transparent;
+	margin-top: 20px;
+	color: #bc6c5e;
+	}
+
+	.top-bar-section > ul > .divider {
+		border-left: 1px rgba(0,0,0,0.3) solid;
+		border-right: 1px rgba(0,0,0,0.3) solid;
+	}
+}
+
+.top-bar-section .has-form {
+	background: $subtle-gray;
+}
+
+.main-logo {
+	background: image-url("logo.png") no-repeat $subtle-gray;
+	width: 175px;
+	height: 39px;
+	text-indent: -100000em;
+}
+
+ 
+
+@media only screen and (min-width: 920px) {
+	.top-bar {
+		height: 90px;
+
+		.name {
+			padding: 26px;
+		}
+	}
+
+.left {
+	background: $subtle-gray !important;
+}
+	.left li:first-child {
+		margin-right: 10px;
+	}
+}
+
+.nav-link a, #sign_in_link {
+
+border: none;
+font-family: inherit;
+font-size: inherit;
+color: inherit;
+background: none;
+cursor: pointer;
+padding: 6px;
+display: inline-block;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-weight: 700;
+outline: none;
+position: relative;
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+transition: all 0.3s;
+border: 3px solid $btn-color;
+color: $btn-color;
+
+&:hover {
+	background: $btn-color !important;
+	color: white !important;
+}
+
+}
+
+#sign_in_link {
+	padding: 20px;
+}
