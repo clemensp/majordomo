@@ -12,7 +12,11 @@ class User < ActiveRecord::Base
     data = access_token['info']
     if user = User.where(email: data["email"]).first
       user
-    else # Create a user with a stub password.
+    else 
+      #return unless Nulogy email
+      return User.new unless data["email"].split("@").last == "nulogy.com"
+
+      # Create a user with a stub password.
       User.create!(:email => data["email"], name: data["name"], :password => Devise.friendly_token[0,20])
     end
   end
