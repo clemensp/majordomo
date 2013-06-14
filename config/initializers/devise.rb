@@ -245,20 +245,6 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 
 
-  #require "openid/store/filesystem"
-  #config.omniauth :open_id, OpenID::Store::Filesystem.new("/tmp")
+  require 'openid/store/filesystem'
+  config.omniauth :openid, :store => OpenID::Store::Filesystem.new('/tmp'), :name => 'google', :identifier => 'https://www.google.com/accounts/o8/id'
 end
-
-require 'omniauth-openid'
-require 'openid'
-require 'openid/store/filesystem'
-require 'gapps_openid'
-
-# set the path to your ca file so https calls are verified. (change to wherever your cert lives)
-#OpenID.fetcher.ca_file = "#{Rails.root}/config/certs/google_ca.crt"
-
-# provide us with a /auth/admin endpoint to authenticate via Google Apps Auth
-Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :open_id, :name => 'nulogy', :identifier => 'https://www.google.com/accounts/o8/id'
-end
-

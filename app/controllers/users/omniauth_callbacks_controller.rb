@@ -1,5 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController  
-  def open_id
+  def google
     # You need to implement the method below in your model
     @user = User.find_for_open_id(env["omniauth.auth"], current_user)
     if @user.persisted?
@@ -10,4 +10,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_url
     end
   end
+  
+  def passthru
+    render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
+  end
+
 end
