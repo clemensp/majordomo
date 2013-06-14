@@ -16,4 +16,4 @@
 
 /.rvmrc
 
-/config/databbase.yml
+config/database.yml
