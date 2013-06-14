@@ -6,8 +6,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Google"
       sign_in_and_redirect @user, :event => :authentication
     else
-      session["devise.open:id_data"] = env["openid.ext1"]
-      redirect_to new_user_registration_url
+      flash[:alert] = "You must sign in with a valid Nulogy email"
+      redirect_to root_url
     end
   end
   

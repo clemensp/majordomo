@@ -24,6 +24,19 @@
 
   <%= render "shared/navigation" -%>
 
+    <% if flash[:notice].present? -%>
+      <div id="notice-msg">
+        <%= flash[:notice] -%>
+      </div>
+    <% end -%>
+
+    <% if flash[:alert].present? -%>
+      <div id="alert-msg">
+        <%= flash[:alert] -%>
+      </div>
+    <% end -%>    
+
+
     <%= yield %>
 
     
