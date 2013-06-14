@@ -7,7 +7,11 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'devise'
-gem "oa-openid", :require => "omniauth/openid"
+#gem "oa-openid"
+#gem 'omniauth'
+gem 'omniauth-openid'
+gem 'ruby-openid-apps-discovery'
+
 
 
 # Gems used only for assets and not required
