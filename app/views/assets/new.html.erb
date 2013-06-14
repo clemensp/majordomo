@@ -1,8 +1,12 @@
-<label>Name:
-  <input type="text" name="asset[name]"></input>
-</label>
+<%= form_for @asset do %>
+  <label>Name:
+    <input type="text" name="asset[name]" />
+  </label>
 
-<label>
-  Description:
-  <input type="text" name="asset[description]"></input>
-</label>
+  <label>
+    Description:
+    <textarea name="asset[description]"></textarea>
+  </label>
+
+  <input type="submit" value="Add!" />
+<% end %>
