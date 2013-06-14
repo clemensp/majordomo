@@ -16,7 +16,7 @@ class Asset < ActiveRecord::Base
     self.status == "available"
   end
 
-  def borrow_for(borrowed)
+  def borrow_for(borrower)
     self.borrower = borrower
     self.status = Asset::BORROWED
     self.save!
