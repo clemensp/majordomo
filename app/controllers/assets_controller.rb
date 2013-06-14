@@ -35,5 +35,7 @@ class AssetsController < ApplicationController
     @asset = Asset.find(params[:id])
 
     @qr = RQRCode::QRCode.new(asset_url(@asset))
+
+    render 'qrcode', layout: 'print'
   end
 end
