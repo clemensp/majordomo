@@ -9,6 +9,8 @@ gem 'pg'
 gem 'devise'
 gem 'omniauth'
 gem "omniauth-openid"
+gem "uuid"
+gem "rqrcode"
 
 # Gems used only for assets and not required
 # in production environments by default.
