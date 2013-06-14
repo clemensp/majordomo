@@ -6,13 +6,16 @@
 <div class="large-12 columns">
 	<table width="100%">
   <thead>
-    <th>
+    <th width="40%">
       Name
     </th>
-    <th>
+    <th width="20%">
       Status
     </th>
-    <th>
+    <th width="20%">
+      Borrower
+    </th>
+    <th width="20%">
       Modified
     </th>
   </thead>
@@ -25,6 +28,9 @@
         </td>
         <td>
           <%= asset.status %>
+        </td>
+        <td>
+          <%= asset.borrower.try(:name) %>
         </td>
         <td>
           <%= asset.updated_at %>

@@ -1,4 +1,6 @@
 class AssetsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     @assets = Asset.all
   end
@@ -44,7 +46,7 @@ class AssetsController < ApplicationController
 
   def borrow
     @asset = Asset.find(params[:id])
-    @asset.borrow_for(params[:asset][:borrower_id])
+    @asset.borrow_for(current_user)
 
     redirect_to :action => :borrowed_status, uuid: @asset.uuid
   end
