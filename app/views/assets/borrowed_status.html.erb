@@ -24,9 +24,6 @@
   <% if @asset.available? %>
     <form action="<%= borrow_asset_path(@asset) %>" method="POST">
         <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
-        <label>Enter your name:
-        <input type="text" name="asset[borrowed_id]" />
-        </label>
 
       <hr>
 
