@@ -13,17 +13,17 @@
 
 
 <% if @asset.available? %>
-  <form action="<%= borrow_asset_path(@asset) %>" method="POST">
-    Enter your name:
-    <input type="text" name="asset[borrowed_id]" />
+  <%= form_tag borrow_asset_path(@asset), method: :post do %>
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
     <input type="submit" value="Borrow!" />
-  </form>
+  <% end %>
 <% else %>
   <label>
-    Borrowed by: <%= @asset.borrower_id %>
+    Borrowed by: <%= @asset.borrower.try(:name) %>
   </label>
 
-  <form action="<%= return_asset_path(@asset) %>" method="POST">
+  <%= form_tag return_asset_path(@asset), method: :post do %>
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
     <input type="submit" value="Return!" />
-  </form>
+  <% end %>
 <% end %>
