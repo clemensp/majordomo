@@ -1,4 +1,8 @@
 <style type="text/css">
+.qrcode {
+  padding-left: 10px
+}
+
 table {
   border-width: 0;
   border-style: none;
@@ -19,6 +23,7 @@ td.black { background-color: #000; }
 td.white { background-color: #fff; }
 </style>
 
+<div class="qrcode">
 <table>
 <% @qr.modules.each_index do |x| %>
   <tr>  
@@ -32,3 +37,4 @@ td.white { background-color: #fff; }
   </tr>
 <% end %>
 </table>
+</div>

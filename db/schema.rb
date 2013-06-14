@@ -11,15 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130614165353) do
+ActiveRecord::Schema.define(:version => 20130614192819) do
 
   create_table "assets", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.string   "uuid"
+    t.string   "status",      :default => "available"
+    t.integer  "user_id"
   end
+
+  create_table "shortened_urls", :force => true do |t|
+    t.integer  "owner_id"
+    t.string   "owner_type", :limit => 20
+    t.string   "url",                                     :null => false
+    t.string   "unique_key", :limit => 10,                :null => false
+    t.integer  "use_count",                :default => 0, :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
+  end
+
+  add_index "shortened_urls", ["owner_id", "owner_type"], :name => "index_shortened_urls_on_owner_id_and_owner_type"
+  add_index "shortened_urls", ["unique_key"], :name => "index_shortened_urls_on_unique_key", :unique => true
+  add_index "shortened_urls", ["url"], :name => "index_shortened_urls_on_url"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

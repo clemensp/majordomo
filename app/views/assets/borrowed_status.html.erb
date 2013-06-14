@@ -1,0 +1,29 @@
+<h1>Borrow Asset: <%= @asset.name %></h1>
+
+<label>
+  Description: <%= @asset.description %>
+</label>
+
+<label>
+  Status: <%= @asset.status %>
+</label>
+
+<br />
+<br />
+
+
+<% if @asset.available? %>
+  <form action="<%= borrow_asset_path(@asset) %>" method="POST">
+    Enter your name:
+    <input type="text" name="asset[user_id]" />
+    <input type="submit" value="Borrow!" />
+  </form>
+<% else %>
+  <label>
+    Borrowed by: <%= @asset.user_id %>
+  </label>
+
+  <form action="<%= return_asset_path(@asset) %>" method="POST">
+    <input type="submit" value="Return!" />
+  </form>
+<% end %>
