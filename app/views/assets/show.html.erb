@@ -7,6 +7,12 @@
 <label>
   UUID: <%= @asset.uuid %>
 </label>
+
+
+<br />
+<br />
+<%= link_to "Borrowed Status", borrow_asset_url(@asset) %>
+<br />
 <br />
 <%= render partial: "qrcode" %>
 
