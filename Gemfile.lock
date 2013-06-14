@@ -97,8 +97,6 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ruby-openid (2.2.3)
-    ruby-openid-apps-discovery (1.2.0)
-      ruby-openid (>= 2.1.7)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -130,10 +128,10 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
+  omniauth
   omniauth-openid
   pg
   rails (= 3.2.13)
-  ruby-openid-apps-discovery
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
   zurb-foundation (~> 4.0.0)

@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   def self.find_for_open_id(access_token, signed_in_resource=nil)
-    data = access_token['user_info']
-    if user = User.find_by_email(data["email"])
+    data = access_token['info']
+    if user = User.where(email: data["email"]).first
       user
     else # Create a user with a stub password.
       User.create!(:email => data["email"], :password => Devise.friendly_token[0,20])
