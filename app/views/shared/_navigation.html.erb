@@ -104,7 +104,11 @@
       </li>
       <li class="divider show-for-small"></li>
       <li class="has-form">
-        <a class="button" href="#">Button!</a>
+        <% if user_signed_in? -%>
+          <%= link_to "Sign out", destroy_user_session_url, method: :delete %>
+        <% else -%>
+          <%= link_to "Sign in", user_omniauth_authorize_url(provider: "google") %>
+        <% end -%>
       </li>
     </ul>
   </section>
