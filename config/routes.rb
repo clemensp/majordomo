@@ -3,7 +3,11 @@ Majordomo::Application.routes.draw do
    devise_for :users
 
 
-  resources :assets
+  resources :assets do
+    member do
+      get :qrcode
+    end
+  end
 
   root :to => 'home#index'
 end

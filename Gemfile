@@ -14,6 +14,8 @@ gem 'ruby-openid-apps-discovery'
 
 gem "uuid"
 
+gem "rqrcode"
+
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -98,6 +98,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    rqrcode (0.4.2)
     ruby-openid (2.2.3)
     ruby-openid-apps-discovery (1.2.0)
       ruby-openid (>= 2.1.7)
@@ -138,6 +139,7 @@ DEPENDENCIES
   omniauth-openid
   pg
   rails (= 3.2.13)
+  rqrcode
   ruby-openid-apps-discovery
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)

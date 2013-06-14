@@ -5,6 +5,8 @@ class AssetsController < ApplicationController
 
   def show
     @asset = Asset.find(params[:id])
+
+    @qr = RQRCode::QRCode.new(asset_url(@asset))
   end
 
   def new
@@ -27,5 +29,11 @@ class AssetsController < ApplicationController
     @asset.update_attributes(params[:asset])
 
     redirect_to asset_path(@asset)
+  end
+
+  def qrcode
+    @asset = Asset.find(params[:id])
+
+    @qr = RQRCode::QRCode.new(asset_url(@asset))
   end
 end
