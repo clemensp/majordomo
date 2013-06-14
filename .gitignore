@@ -17,4 +17,4 @@
 /.gitignore
 /.rvmrc
 
-/config/databbase.yml
+config/databbase.yml
