@@ -13,3 +13,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+/.gitignore
+/.rvmrc
+
+/config/databbase.yml
