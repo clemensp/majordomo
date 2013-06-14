@@ -1,0 +1,19 @@
+defaults: &defaults
+  adapter: postgresql
+  host: localhost
+
+development:
+  <<: *defaults
+  database: majordomo_development
+
+# Warning: The database defined as 'test' will be erased and
+# re-generated from your development database when you run 'rake'.
+# Do not set this db to the same as development or production.
+test:
+  <<: *defaults
+  database: majordomo_test
+  min_messages: warning
+
+production:
+  <<: *defaults
+  database: majordomo_production
