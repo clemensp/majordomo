@@ -15,12 +15,12 @@
 <% if @asset.available? %>
   <form action="<%= borrow_asset_path(@asset) %>" method="POST">
     Enter your name:
-    <input type="text" name="asset[user_id]" />
+    <input type="text" name="asset[borrowed_id]" />
     <input type="submit" value="Borrow!" />
   </form>
 <% else %>
   <label>
-    Borrowed by: <%= @asset.user_id %>
+    Borrowed by: <%= @asset.borrower_id %>
   </label>
 
   <form action="<%= return_asset_path(@asset) %>" method="POST">

@@ -44,7 +44,7 @@ class AssetsController < ApplicationController
 
   def borrow
     @asset = Asset.find(params[:id])
-    @asset.borrow_for(params[:asset][:user_id])
+    @asset.borrow_for(params[:asset][:borrower_id])
 
     redirect_to :action => :borrowed_status, uuid: @asset.uuid
   end
