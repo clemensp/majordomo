@@ -33,17 +33,13 @@ class AssetsController < ApplicationController
 
   def qrcode
     @asset = Asset.find(params[:id])
-
     set_qrcode
+
+    render 'qrcode', layout: 'print'
   end
 
   def borrowed_status
     @asset = Asset.find_by_uuid(params[:uuid])
-  end
-
-  def set_qrcode
-    url = view_context.borrow_asset_url(@asset)
-    @qr = RQRCode::QRCode.new(url)
   end
 
   def borrow
@@ -58,5 +54,10 @@ class AssetsController < ApplicationController
     @asset.return
 
     redirect_to :action => :borrowed_status, uuid: @asset.uuid
+  end
+
+  def set_qrcode
+    url = view_context.borrow_asset_url(@asset)
+    @qr = RQRCode::QRCode.new(url)
   end
 end

@@ -7,17 +7,12 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'devise'
-#gem "oa-openid"
-#gem 'omniauth'
-gem 'omniauth-openid'
-gem 'ruby-openid-apps-discovery'
-
+gem 'omniauth'
+gem "omniauth-openid"
 gem "uuid"
-
 gem "rqrcode"
 
 gem "shortener"
-
 
 # Gems used only for assets and not required
 # in production environments by default.

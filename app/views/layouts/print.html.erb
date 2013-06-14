@@ -15,26 +15,14 @@
 
   	<title><%= content_for?(:title) ? yield(:title) : "Majordomo" %></title>
 
-  	<%= stylesheet_link_tag "application", "home" %>
+  	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
 
-  <%= render "shared/navigation" -%>
-
-    <% if flash[:notice].present? -%>
-      <div id="notice-msg">
-        <%= flash[:notice] -%>
-      </div>
-    <% end -%>
-
-    <% if flash[:alert].present? -%>
-      <div id="alert-msg">
-        <%= flash[:alert] -%>
-      </div>
-    <% end -%>    
+    upapdfpdf
 
 
     <%= yield %>

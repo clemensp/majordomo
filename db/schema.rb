@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(:version => 20130614192819) do
     t.integer  "user_id"
   end
 
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
   create_table "shortened_urls", :force => true do |t|
     t.integer  "owner_id"
     t.string   "owner_type", :limit => 20
@@ -50,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20130614192819) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.text     "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
