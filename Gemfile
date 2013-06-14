@@ -12,6 +12,7 @@ gem 'devise'
 gem 'omniauth-openid'
 gem 'ruby-openid-apps-discovery'
 
+gem "uuid"
 
 
 # Gems used only for assets and not required

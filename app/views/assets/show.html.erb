@@ -4,6 +4,10 @@
   Description: <%= @asset.description %>
 </label>
 
+<label>
+  UUID: <%= @asset.uuid %>
+</label>
+
 <%= link_to "Edit", edit_asset_path(@asset) %>
 <br />
 <%= link_to "Back to index", assets_path %>
