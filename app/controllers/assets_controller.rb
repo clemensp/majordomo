@@ -16,4 +16,16 @@ class AssetsController < ApplicationController
 
     redirect_to asset_path(@asset)
   end
+
+  def edit
+    @asset = Asset.find(params[:id])
+  end
+
+  def update
+    @asset = Asset.find(params[:id])
+
+    @asset.update_attributes(params[:asset])
+
+    redirect_to asset_path(@asset)
+  end
 end
