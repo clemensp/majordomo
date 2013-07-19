@@ -20,6 +20,8 @@ Majordomo::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  config.assets.precompile += %w( basement.css )
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
@@ -50,6 +52,8 @@ Majordomo::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+
+  config.action_mailer.default_url_options = { host: "majordomo.nulogy.nu" }
 
   # Enable threaded mode
   # config.threadsafe!
