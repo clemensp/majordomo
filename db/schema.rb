@@ -11,17 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130614195553) do
+ActiveRecord::Schema.define(:version => 20130719142549) do
 
   create_table "assets", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
     t.string   "uuid"
-    t.string   "status",        :default => "available"
+    t.string   "status",          :default => "available"
     t.integer  "borrower_id"
     t.string   "borrower_type"
+    t.text     "notes"
+    t.boolean  "shared_resource", :default => false,       :null => false
   end
 
   create_table "sessions", :force => true do |t|
