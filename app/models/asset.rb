@@ -23,6 +23,7 @@ class Asset < ActiveRecord::Base
   end
 
   def return
+    self.borrower = nil
     self.status = Asset::AVAILABLE
     self.save!
   end
