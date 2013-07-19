@@ -85,6 +85,29 @@ xmlns="http://www.w3.org/TR/REC-html40">
       mso-paper-source:0;}
     div.Section1
       {page:Section1;}
+
+
+    .qrcode {
+    }
+
+    .qrcode table {
+      border-width: 0;
+      border-style: none;
+      border-color: #0000ff;
+      border-collapse: collapse;
+    }
+    .qrcode table td {
+      border-width: 0; 
+      border-style: none;
+      border-color: #0000ff; 
+      border-collapse: collapse; 
+      padding: 0; 
+      margin: 0; 
+      width: 4px; 
+      height: 4px; 
+    }
+    .qrcode table td.black { background-color: #000; }
+    .qrcode table td.white { background-color: #fff; }
     -->
     </style>
     <!--[if gte mso 10]>
@@ -111,7 +134,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
   </head>
 
   <body bgcolor=white lang=EN-US style='tab-interval:36.0pt'>
-    <div class=Section1>
+    <div class=Section1 style='page-break-after: avoid'>
       <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
        style='border-collapse:collapse;mso-table-layout-alt:fixed;mso-padding-alt:
        0cm 5.75pt 0cm 5.75pt'>
@@ -120,10 +143,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
         <p class=MsoNormal>
           <o:p>
             <!--Label 1 -->
-            <br/>
-            Name: <%= @asset.name %>
-            <br/>
-            UUID: <%= @asset.uuid %>
+            <%= render partial: 'qrcode', locals: {qr: @qr, asset: @asset} -%>
           </o:p>
         </p>
         </td>
@@ -136,7 +156,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
         <p class=MsoNormal>
           <o:p>
             <!--Label 2 -->
-            LABEL 2
+            <%= render partial: 'qrcode', locals: {qr: @qr, asset: @asset} -%>
           </o:p>
         </p>
         </td>
@@ -146,7 +166,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
         <p class=MsoNormal>
           <o:p>
             <!--Label 3 -->
-            LABEL 3
+            <%= render partial: 'qrcode', locals: {qr: @qr, asset: @asset} -%>
           </o:p>
         </p>
         </td>
@@ -154,7 +174,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
         <p class=MsoNormal>
           <o:p>
             <!--Label 4 -->
-            LABEL 4
+            <%= render partial: 'qrcode', locals: {qr: @qr, asset: @asset} -%>
           </o:p>
         </p>
         </td>
@@ -164,7 +184,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
         <p class=MsoNormal>
           <o:p>
             <!--Label 5 -->
-            LABEL 5
+            <%= render partial: 'qrcode', locals: {qr: @qr, asset: @asset} -%>
           </o:p>
         </p>
         </td>
@@ -172,7 +192,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
         <p class=MsoNormal>
           <o:p>
             <!--Label 6 -->
-            LABEL 6
+            <%= render partial: 'qrcode', locals: {qr: @qr, asset: @asset} -%>
           </o:p>
         </p>
         </td>
@@ -182,7 +202,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
         <p class=MsoNormal>
           <o:p>
             <!--Label 5 -->
-            LABEL 7
+            <%= render partial: 'qrcode', locals: {qr: @qr, asset: @asset} -%>
           </o:p>
         </p>
         </td>
@@ -190,7 +210,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
         <p class=MsoNormal>
           <o:p>
             <!--Label 6 -->
-            LABEL 8
+            <%= render partial: 'qrcode', locals: {qr: @qr, asset: @asset} -%>
           </o:p>
         </p>
         </td>
@@ -200,7 +220,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
         <p class=MsoNormal>
           <o:p>
             <!--Label 7 -->
-            LABEL 9
+            <%= render partial: 'qrcode', locals: {qr: @qr, asset: @asset} -%>
           </o:p>
         </p>
         </td>
@@ -208,14 +228,12 @@ xmlns="http://www.w3.org/TR/REC-html40">
         <p class=MsoNormal>
           <o:p>
             <!--Label 8 -->
-            LABEL 10
+            <%= render partial: 'qrcode', locals: {qr: @qr, asset: @asset} -%>
           </o:p>
         </p>
         </td>
        </tr>
       </table>
-
-      <p class=MsoNormal><o:p>&nbsp;</o:p></p>
     </div>
   </body>
 </html>
