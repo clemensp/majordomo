@@ -1,3 +1,8 @@
+<% content_for :styles do %>
+<%= stylesheet_link_tag "crud" %>
+<% end %>
+
+
 <section class="row">
 
 <div class="large-12 colums">
@@ -18,9 +23,9 @@
 
 <hr>
 
-<%= link_to "Back to index", users_path, :class =>"button" %>
+<%= link_to "Back to index", users_path, :class =>"a-button" %>
 
-<%= link_to "Edit", edit_user_path(@user), :class =>"button" %>
+<%= link_to "Edit", edit_user_path(@user), :class =>"a-button" %>
 
 </div>
 

@@ -1,6 +1,11 @@
+<% content_for :styles do %>
+<%= stylesheet_link_tag "crud" %>
+<% end %>
+
+
 <section class="row">
 <div class="large-12 columns">
-	<h1>Assets</h1>
+	<h1>Assets currently being tracked</h1>
 </div>
 
 <div class="large-12 columns">
@@ -53,10 +58,10 @@
 </table>
 
 
-<%= link_to "Create", new_asset_path(@asset), :class => "button" %>
+<%= link_to "Create an asset to track it", new_asset_path(@asset), :class => "a-button" %>
 
-<a href="#" class="button print-selected-tags">
-  Print Selected Tags
+<a href="#" class="a-button print-selected-tags">
+  Print ID tags for selected assets
 </a> 
 
 
