@@ -38,7 +38,7 @@ class AssetsController < ApplicationController
     set_qrcode
 
     #render 'qrcode', layout: 'print'
-    render template: "assets/qrcode"
+    render template: "assets/qrcode", layout: false
   end
 
   def borrowed_status
