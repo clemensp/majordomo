@@ -1,20 +1,41 @@
-<section class="row">
+<% content_for :styles do %>
+<%= stylesheet_link_tag "home" %>
 
-<section class="large-7 columns">
-<h2 id="welcome">
-	Create Assets<br>
-	Track Assets<br>
-	Borrow Assets<br>
-</h2>
-</section>
+<% end %>
 
-<section class="large-5 columns">
-<h3 id="summary">Welcome to Majordomo</h3>
+<div class="main-page-wrapper">
 
-<p>Majordomo is a simple asset tracking application for all of Nulogy's assets and staff. Sign in with your Nulogy google account to get started</p>
+	<section class="row main-page">
+		<section class="small-12 large-5 columns">
 
-	 <%= link_to "Sign in", user_omniauth_authorize_url(provider: "google"), :class => "button" %>
+			<ul class="welcome-message">
+				<li class="first">Create Assets</li>
+				<li class="second">Find Assets</li>
+				<li class="third">Borrow Assets</li>
+				<li class="fourth">Track Assets</li>
+			</ul>
 
-</section>
+		</section>
 
-</section>
+	<section class="summary large-7 columns">
+		<h3>Welcome to Majordomo</h3>
+
+		<p>Majordomo is a simple asset tracking application for all of Nulogy's assets and staff. Sign in with your Nulogy google account to get started</p>
+
+		<%= link_to "Sign in to get started", user_omniauth_authorize_url(provider: "google"), :class => "a-button" %>
+	</section>
+
+	</section>
+</div>
+
+<div class="footer-wrapper">
+
+<footer class="row footer">
+
+<div class="large-12 columns">
+<p>Majordomo is a Hackday project by Andrew Shewchenko, Clemens Park, Lukas Beaton &amp; Syed Ahmed Hussaini</p>
+</div>
+
+</footer>
+
+</div>
