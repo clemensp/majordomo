@@ -1,0 +1,32 @@
+<section class="row">
+<div class="large-12 columns">
+	<h1>Users</h1>
+</div>
+
+<div class="large-12 columns">
+	<table width="100%">
+  <thead>
+    <th width="50%">
+      Name
+    </th>
+    <th width="50%">
+      Email
+    </th>
+  </thead>
+
+  <% @users.each do |user| %>
+    <tbody>
+      <tr>
+        <td>
+          <%= link_to (user.name || 'not set'), user_path(user) %>
+        </td>
+        <td>
+          <%= user.email %>
+        </td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>
+
+</div>
+</section>
