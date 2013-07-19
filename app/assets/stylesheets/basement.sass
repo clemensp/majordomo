@@ -89,6 +89,8 @@ body
 .primary-nav
 	padding-top: 12px
 	text-align: right
+	@extend .hide-for-small
+
 
 
 h1
@@ -97,3 +99,45 @@ h1
 	font-size: 40px
 	border-bottom: 2px solid
 	padding: 20px 0px
+
+.reveal-modal
+	h2
+		font-family: $montserrat
+		color: $midnight-blue
+		font-size: 26px
+		padding: 10px 0px
+		border-bottom: 2px solid
+
+	p
+		font-family: Cambria, serif
+		font-size: 18px
+		font-style: normal
+		font-weight: normal
+		text-transform: normal
+		letter-spacing: normal
+		line-height: 1.5em
+		color: $wet-asphalt
+
+	.gridster
+		background: white
+		border: 1px solid rgba(0,0,0,0.1)
+		box-shadow: 0px 0px 5px rgba(0,0,0,0.3)
+
+		ul li
+			background: $belize-hole
+			color: white
+			padding-top: 20px
+			border: 2px solid rgba (0,0,0,0.05)
+
+span.label-value
+	font-weight: bold
+	color: $wet-asphalt
+	font-size: 14px
+	text-transform: uppercase
+
+p.value
+	font-size: 20px
+	color: rgba(0,0,0,0.9)
+
+input[type="submit"]
+	background: white
