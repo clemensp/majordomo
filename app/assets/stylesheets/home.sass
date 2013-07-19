@@ -1,0 +1,95 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "foundation_and_overrides", "globals", "navigation"
+
+
+@-webkit-keyframes fadeInUp
+	0%
+		opacity: 0
+		-webkit-transform: translateY(20px)
+
+	100%
+		opacity: 1
+		-webkit-transform: translateY(0)
+
+
+body
+	background: white
+	-webkit-animation: fadeInUp 500ms ease-in
+
+.main-page-wrapper
+	padding: 30px 0px 60px 0px
+
+
+.footer-wrapper
+	background: rgba(0,10,0,0.03)
+	padding: 60px
+
+	p
+		text-align: center
+		font-family: Cambria, serif
+		font-size: 18px
+		color: rgba(0,0,0,0.3)
+
+.welcome-message
+	padding: 10px 0px 20px 0px
+	border-bottom: 1px dotted $alizarin
+
+	li
+		font-family: $montserrat
+		font-weight: 500
+		letter-spacing: 0px
+		font-size: 48px
+		line-height: 1.4em
+		list-style: none
+		color: transparent
+		-webkit-text-stroke-width: 2px
+		-webkit-text-stroke-color: black
+
+	.first
+		-webkit-text-stroke-color: $green-sea
+		@extend .hide-for-small
+
+	.second
+		-webkit-text-stroke-color: $peter-river
+		@extend .hide-for-small
+
+
+	.third
+		-webkit-text-stroke-color: $orange
+		@extend .hide-for-small
+
+	.fourth
+		-webkit-text-stroke-color: $alizarin
+
+
+.summary
+	color: $asbestos
+
+	h3
+		font-family: $montserrat
+		color: $midnight-blue
+		font-size: 48px
+		margin: 10px 0px 10px 0px
+		@extend .hide-for-small
+
+	p
+		font-family: Cambria, serif
+		font-size: 22px
+		font-style: normal
+		font-weight: normal
+		text-transform: normal
+		letter-spacing: normal
+		line-height: 1.5em
+
+	.a-button
+		color: $alizarin
+		width: 100%
+		display: block
+
+		&:hover
+			background: $alizarin
+			border-color: $pomegranate
+			color: white
