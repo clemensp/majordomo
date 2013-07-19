@@ -28,7 +28,7 @@
 
   <tbody>
   <% @assets.each do |asset| %>
-    <tr>
+    <tr class='asset-row' data-asset-name='<%= asset.name %>'>
       <td>
         <input name="print_asset_tag" type="checkbox" value="<%= asset.id %>" class="print-asset-tag-checkbox" />
       </td>
@@ -41,7 +41,7 @@
       <td>
         <%= asset.shared_resource? %>
       </td>
-      <td>
+      <td 
         <%= asset.borrower.try(:name) %>
       </td>
       <td>
@@ -69,19 +69,21 @@
 
   <div class="gridster" style="width: 500px; height: 500px;">
     <ul>
-      <li data-row="1" data-col="1" data-sizex="2" data-sizey="1"></li>
-      <li data-row="2" data-col="1" data-sizex="2" data-sizey="1"></li>
-      <li data-row="3" data-col="1" data-sizex="2" data-sizey="1"></li>
-      <li data-row="4" data-col="1" data-sizex="2" data-sizey="1"></li>
-      <li data-row="5" data-col="1" data-sizex="2" data-sizey="1"></li>
+      <li data-row="1" data-col="1" data-sizex="2" data-sizey="1" class="asset-tag-1"></li>
+      <li data-row="2" data-col="1" data-sizex="2" data-sizey="1" class="asset-tag-3"></li>
+      <li data-row="3" data-col="1" data-sizex="2" data-sizey="1" class="asset-tag-5"></li>
+      <li data-row="4" data-col="1" data-sizex="2" data-sizey="1" class="asset-tag-7"></li>
+      <li data-row="5" data-col="1" data-sizex="2" data-sizey="1" class="asset-tag-8"></li>
 
-      <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"></li>
-      <li data-row="2" data-col="2" data-sizex="2" data-sizey="1"></li>
-      <li data-row="3" data-col="2" data-sizex="2" data-sizey="1"></li>
-      <li data-row="4" data-col="2" data-sizex="2" data-sizey="1"></li>
-      <li data-row="5" data-col="2" data-sizex="2" data-sizey="1"></li>
+      <li data-row="1" data-col="2" data-sizex="2" data-sizey="1" class="asset-tag-2"></li>
+      <li data-row="2" data-col="2" data-sizex="2" data-sizey="1" class="asset-tag-4"></li>
+      <li data-row="3" data-col="2" data-sizex="2" data-sizey="1" class="asset-tag-6"></li>
+      <li data-row="4" data-col="2" data-sizex="2" data-sizey="1" class="asset-tag-8"></li>
+      <li data-row="5" data-col="2" data-sizex="2" data-sizey="1" class="asset-tag-10"></li>
     </ul>
   </div>
+
+  <a class="close-reveal-modal">&#215;</a>
 </div>
 
 <%= stylesheet_link_tag 'jquery.gridster' %>

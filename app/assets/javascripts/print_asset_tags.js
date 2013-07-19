@@ -1,5 +1,15 @@
 ;jQuery(function($) {
   $('.print-selected-tags').bind('click', function(){
+    var selectedAssets = $('input.print-asset-tag-checkbox:checked')
+
+    _.each(selectedAssets, function(selectedAsset, index){
+      var name = $(selectedAsset).closest('tr.asset-row').data('asset-name');
+      
+      index += 1
+
+      $('.asset-tag-'+index).html(name)
+    })
+
     $('#printTagModal').foundation('reveal', 'open')
   });
 

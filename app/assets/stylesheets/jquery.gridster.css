@@ -9,6 +9,8 @@
 .gridster ul li {
   list-style: none;
   background: #CCC;
+  text-align: center;
+  padding-top: 10px;
 }
 
 .gridster > * {
