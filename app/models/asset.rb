@@ -1,5 +1,5 @@
 class Asset < ActiveRecord::Base
-  attr_accessible :name, :description
+  attr_accessible :name, :description, :notes, :shared_resource
 
   belongs_to :borrower, polymorphic: true
 

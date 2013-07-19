@@ -6,3 +6,13 @@
   Description:
   <textarea name="asset[description]" rows="10"><%= @asset.description %></textarea>
 </label>
+
+<label>
+  Notes:
+  <textarea name="asset[notes]" rows="10"><%= @asset.notes %></textarea>
+</label>
+
+<label>
+  Is shared resource:
+  <%= select_tag "asset[shared_resource]", options_for_select([true, false ], @asset.shared_resource) %>
+</label>

@@ -6,11 +6,14 @@
 <div class="large-12 columns">
 	<table width="100%">
   <thead>
-    <th width="40%">
+    <th width="30%">
       Name
     </th>
-    <th width="20%">
+    <th width="15%">
       Status
+    </th>
+    <th width="15%">
+      Shared?
     </th>
     <th width="20%">
       Borrower
@@ -28,6 +31,9 @@
         </td>
         <td>
           <%= asset.status %>
+        </td>
+        <td>
+          <%= asset.shared_resource? %>
         </td>
         <td>
           <%= asset.borrower.try(:name) %>
