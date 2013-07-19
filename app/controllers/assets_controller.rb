@@ -38,8 +38,10 @@ class AssetsController < ApplicationController
   end
 
   def qrcode
-    @asset = Asset.find(params[:id])
-    set_qrcode
+    @assets = {}
+    params['label'].keys.each do |i|
+      @assets[i] = Asset.find(params[:label][i])
+    end
 
     render template: "assets/qrcode", layout: false
   end

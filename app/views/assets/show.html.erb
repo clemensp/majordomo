@@ -42,10 +42,51 @@
 
 </section>
 
-<div id="printTagModal" class="reveal-modal">
-  <h2>Awesome. I have it.</h2>
-  <p class="lead">Your couch.  It is mine.</p>
-  <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
-  <%= link_to "Print QR Code Tag", qrcode_asset_path(@asset, format: 'pdf'), html: {:class =>"button"} %>
+<div id="printTagModal" class="reveal-modal medium">
+  <h2>Print Options</h2>
+  <p class="lead">Select the area on the sheet on which to print the label.</p>
+  
+  <table>
+    <tr>
+      <td width="80">
+        <%= link_to "Label 1", qrcode_asset_path(@asset, format: 'pdf', 'label[1]' => @asset.id) %>
+      </td>
+      <td width="80">
+        <%= link_to "Label 2", qrcode_asset_path(@asset, format: 'pdf', 'label[2]' => @asset.id) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Label 3", qrcode_asset_path(@asset, format: 'pdf', 'label[3]' => @asset.id) %>
+      </td>
+      <td>
+        <%= link_to "Label 4", qrcode_asset_path(@asset, format: 'pdf', 'label[4]' => @asset.id) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Label 5", qrcode_asset_path(@asset, format: 'pdf', 'label[5]' => @asset.id) %>
+      </td>
+      <td>
+        <%= link_to "Label 6", qrcode_asset_path(@asset, format: 'pdf', 'label[6]' => @asset.id) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Label 7", qrcode_asset_path(@asset, format: 'pdf', 'label[7]' => @asset.id) %>
+      </td>
+      <td>
+        <%= link_to "Label 8", qrcode_asset_path(@asset, format: 'pdf', 'label[8]' => @asset.id) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Label 9", qrcode_asset_path(@asset, format: 'pdf', 'label[9]' => @asset.id) %>
+      </td>
+      <td>
+        <%= link_to "Label 10", qrcode_asset_path(@asset, format: 'pdf', 'label[10]' => @asset.id) %>
+      </td>
+    </tr>
+  </table>
   <a class="close-reveal-modal">&#215;</a>
 </div>

@@ -1,31 +1,35 @@
-<table>
-  <tr>
-    <td width='150px'>
-      <div class="qrcode">
-        <table>
-        <% qr.modules.each_index do |x| %>
-          <tr>  
-          <% qr.modules.each_index do |y| %>
-           <% if qr.dark?(x,y) %>
-            <td class="black"/>
-           <% else %>
-            <td class="white"/>
-           <% end %>
-          <% end %>
-          </tr>
-        <% end %>
-        </table>
-      </div>
-    </td>
-    <td style='font-size: 16px; font-family: Arial;'>
-      <%= asset.name %>
-    </td>
-  </tr>
-  <tr>
-    <td colspan='2', style='font-size: 12px; font-family: Arial;'>
-      UUID: <%= asset.uuid %>
-    </td>
-  </tr>
-</table>
-            
+<% if asset.present? %>
+  
+  <% url = borrow_asset_url(asset) %> 
+  <% qr = RQRCode::QRCode.new(url) %>
 
+  <table>
+    <tr>
+      <td width='150px'>
+        <div class="qrcode">
+          <table>
+          <% qr.modules.each_index do |x| %>
+            <tr>  
+            <% qr.modules.each_index do |y| %>
+             <% if qr.dark?(x,y) %>
+              <td class="black"/>
+             <% else %>
+              <td class="white"/>
+             <% end %>
+            <% end %>
+            </tr>
+          <% end %>
+          </table>
+        </div>
+      </td>
+      <td style='font-size: 16px; font-family: Arial;'>
+        <%= asset.name %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan='2', style='font-size: 12px; font-family: Arial;'>
+        UUID: <%= asset.uuid %>
+      </td>
+    </tr>
+  </table>
+<% end %> 
