@@ -8,7 +8,7 @@ describe FindUsersToRemind do
     to_remind = FindUsersToRemind.find
 
     expected_data = {}
-    expected_data[user.id.to_s] = [asset]
+    expected_data[user] = [asset]
 
     to_remind.should == expected_data
   end
@@ -20,8 +20,8 @@ describe FindUsersToRemind do
     to_remind = FindUsersToRemind.find
 
     expected_data = {}
-    expected_data[user.id.to_s] = [asset]
-    expected_data[another_user.id.to_s] = [another_asset]
+    expected_data[user] = [asset]
+    expected_data[another_user] = [another_asset]
 
     to_remind.should == expected_data
   end
@@ -32,7 +32,7 @@ describe FindUsersToRemind do
     to_remind = FindUsersToRemind.find
 
     expected_data = {}
-    expected_data[user.id.to_s] = [asset, another_asset]
+    expected_data[user] = [asset, another_asset]
 
     to_remind.should == expected_data
   end
@@ -43,7 +43,7 @@ describe FindUsersToRemind do
     to_remind = FindUsersToRemind.find
 
     expected_data = {}
-    expected_data[user.id.to_s] = [asset]
+    expected_data[user] = [asset]
 
     to_remind.should == expected_data
   end
@@ -55,7 +55,7 @@ describe FindUsersToRemind do
     to_remind = FindUsersToRemind.find
 
     expected_data = {}
-    expected_data[user.id.to_s] = [asset]
+    expected_data[user] = [asset]
 
     to_remind.should == expected_data
   end

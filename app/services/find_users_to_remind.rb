@@ -4,7 +4,7 @@ module FindUsersToRemind
 
 
     borrowers.inject({}) do |h, borrower|
-      h[borrower.id.to_s] = Asset.fetch_all_borrowed_by(borrower).where(shared_resource: true)
+      h[borrower] = Asset.fetch_all_borrowed_by(borrower).where(shared_resource: true)
       h.reject{|borrower, borrowed_assets| borrowed_assets.blank?}
     end
   end
