@@ -5,6 +5,10 @@ class AssetLog < ActiveRecord::Base
   validates :asset, presence: true
   validates :action, presence: true
 
+  def self.fetch_all_for_asset asset
+    where(asset_id: asset.id)
+  end
+
   def self.logging_action_for user, action
     transaction do
       l = new(user: user, action: action)

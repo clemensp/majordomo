@@ -23,6 +23,11 @@
 <span class="label-value">Is shared resource:</span>
 <p class="value"><%= @asset.shared_resource? %></p>
 
+<div>
+  <h2>Asset History</h2>
+  <%= render partial: "asset_logs/asset_logs_table", locals: { asset_logs: @asset_logs } %>
+</div>
+
 <hr>
 
 <%= link_to "Back to index", assets_path, :class =>"button" %>

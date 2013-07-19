@@ -7,6 +7,7 @@ class AssetsController < ApplicationController
 
   def show
     @asset = Asset.find(params[:id])
+    @asset_logs = AssetLog.fetch_all_for_asset(@asset)
 
     set_qrcode
   end
