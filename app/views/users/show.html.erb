@@ -1,0 +1,28 @@
+<section class="row">
+
+<div class="large-12 colums">
+
+<h1>User: <%= @user.name %></h1>
+
+
+<span class="label-value">Name:</span>
+<p class="value"><%= @user.name %></p>
+
+<span class="label-value">Email:</span>
+<p class="value"><%= @user.email %></p>
+
+<div>
+  <h2>Asset History</h2>
+  <%= render partial: "asset_logs/asset_logs_table", locals: { asset_logs: @asset_logs } %>
+</div>
+
+<hr>
+
+<%= link_to "Back to index", users_path, :class =>"button" %>
+
+<%= link_to "Edit", edit_user_path(@user), :class =>"button" %>
+
+</div>
+
+</section>
+

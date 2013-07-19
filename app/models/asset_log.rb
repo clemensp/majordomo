@@ -9,6 +9,10 @@ class AssetLog < ActiveRecord::Base
     where(asset_id: asset.id)
   end
 
+  def self.fetch_all_for_user user
+    where(user_id: user.id)
+  end
+
   def self.logging_action_for user, action
     transaction do
       l = new(user: user, action: action)

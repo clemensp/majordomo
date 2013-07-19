@@ -2,6 +2,8 @@ Majordomo::Application.routes.draw do
   
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
+  resources :users
+
   resources :asset_logs, only: [:index]
 
   resources :assets do
