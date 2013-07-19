@@ -28,7 +28,7 @@ group :assets do
   gem 'zurb-foundation', '~> 4.0.0'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '1.0.19'#foundation relies on jQuery 1.7.1
 gem 'cups'
 
 # To use ActiveModel has_secure_password

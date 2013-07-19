@@ -29,11 +29,18 @@
 
 <%= link_to "Edit", edit_asset_path(@asset), :class =>"button" %>
 
-
-<%= link_to "Print QR Code Tag", qrcode_asset_path(@asset, format: 'pdf'), :class =>"button" %>
-
+<a href="#" class="button" data-reveal-id="printTagModel">
+  Print QR Code Tag
+</a> 
 
 </div>
 
 </section>
 
+<div id="printTagModal" class="reveal-modal">
+  <h2>Awesome. I have it.</h2>
+  <p class="lead">Your couch.  It is mine.</p>
+  <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+  <%= link_to "Print QR Code Tag", qrcode_asset_path(@asset, format: 'pdf'), html: {:class =>"button"} %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
