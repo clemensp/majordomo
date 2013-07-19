@@ -37,7 +37,8 @@ class AssetsController < ApplicationController
     @asset = Asset.find(params[:id])
     set_qrcode
 
-    render 'qrcode', layout: 'print'
+    #render 'qrcode', layout: 'print'
+    render template: "assets/qrcode"
   end
 
   def borrowed_status

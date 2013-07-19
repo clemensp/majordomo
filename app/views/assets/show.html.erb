@@ -32,7 +32,7 @@
 <%= link_to "Edit", edit_asset_path(@asset), :class =>"button" %>
 
 
-<%= link_to "Print QR Code Tag", qrcode_asset_path(@asset), :class =>"button" %>
+<%= link_to "Print QR Code Tag", qrcode_asset_path(@asset, format: 'pdf'), :class =>"button" %>
 
 
 </div>

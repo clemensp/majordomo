@@ -6,6 +6,9 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
 require "sprockets/railtie"
+
+require 'pdfkit'
+
 # require "rails/test_unit/railtie"
 
 if defined?(Bundler)
@@ -17,6 +20,9 @@ end
 
 module Majordomo
   class Application < Rails::Application
+
+    config.middleware.use PDFKit::Middleware, :print_media_type => true
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
