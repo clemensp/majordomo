@@ -1,0 +1,11 @@
+Dear <%= @borrower.email %>,
+
+It appears the following shared resources are still being borrowed by you. Please return them and scan them in as Available at your earliest convenience:
+
+<% @assets.each do |asset| %>
+  <%= link_to asset.name, asset_url(asset) %>
+<% end %>
+
+Thanks,
+
+Your Majordomo
