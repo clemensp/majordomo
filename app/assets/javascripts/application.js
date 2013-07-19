@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
 //= require foundation
 //= require jquery.gridster
 //= require print_asset_tags
