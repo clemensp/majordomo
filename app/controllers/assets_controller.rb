@@ -1,12 +1,13 @@
 class AssetsController < ApplicationController
   before_filter :authenticate_user!
-  
+
   def index
     @assets = Asset.all
   end
 
   def show
     @asset = Asset.find(params[:id])
+    @asset_logs = AssetLog.fetch_all_for_asset(@asset)
 
     set_qrcode
   end
@@ -16,9 +17,12 @@ class AssetsController < ApplicationController
   end
 
   def create
-    @asset = Asset.create(params[:asset])
+    AssetLog.logging_action_for current_user, params[:action] do |l|
+      @asset = Asset.create(params[:asset])
+      l.record_asset @asset
 
-    redirect_to asset_path(@asset)
+      redirect_to asset_path(@asset)
+    end
   end
 
   def edit
@@ -37,7 +41,6 @@ class AssetsController < ApplicationController
     @asset = Asset.find(params[:id])
     set_qrcode
 
-    #render 'qrcode', layout: 'print'
     render template: "assets/qrcode", layout: false
   end
 
@@ -46,17 +49,25 @@ class AssetsController < ApplicationController
   end
 
   def borrow
-    @asset = Asset.find(params[:id])
-    @asset.borrow_for(current_user)
+    AssetLog.logging_action_for current_user, params[:action] do |l|
+      @asset = Asset.find(params[:id])
+      l.record_asset @asset
 
-    redirect_to :action => :borrowed_status, uuid: @asset.uuid
+      @asset.borrow_for(current_user)
+
+      redirect_to :action => :borrowed_status, uuid: @asset.uuid
+    end
   end
 
   def return
-    @asset = Asset.find(params[:id])
-    @asset.return
+    AssetLog.logging_action_for current_user, params[:action] do |l|
+      @asset = Asset.find(params[:id])
+      l.record_asset @asset
 
-    redirect_to :action => :borrowed_status, uuid: @asset.uuid
+      @asset.return
+
+      redirect_to :action => :borrowed_status, uuid: @asset.uuid
+    end
   end
 
   def set_qrcode
