@@ -3,7 +3,7 @@ class Asset < ActiveRecord::Base
 
   before_create :set_uuid
 
-  validates :borrower, presence: true
+  validates :borrower, presence: true, if: -> { status == BORROWED }
 
   BORROWED = "borrowed"
   AVAILABLE = "available"
