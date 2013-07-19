@@ -1,11 +1,15 @@
 @import "globals"
 
 
+body
+	overflow: hidden
+
 .navigation_wrapper
+	border-bottom: 1px solid rgba(0,0,0,0.04)
+	padding: 5px 0px
+	background: rgba(0,0,0,0.03)
 
 	.row
-		border-bottom: 1px solid rgba(0,0,0,0.1)
-		padding: 20px 0px
 
 	.logo
 		font-size: 20px
@@ -14,13 +18,21 @@
 		width: 175px
 		height: 39px
 		display: block
+		margin-right: 10px
+		margin-top: -8px
+		float: left
+		text-align: right
+		direction: rtl
+		border-bottom: 0px
 
 	nav
 		text-align: right
 		margin: 16px 0px
 		vertical-align: middle
 
-		.a-button:first-child
+
+
+		.a-button
 			color: $alizarin
 
 			&:hover
@@ -28,9 +40,22 @@
 				border-color: $pomegranate
 				color: white
 
-			.a-button:last-child
-				color: $belize-hole
+.small-button
+	font-family: $montserrat
+	font-size: 14px
+	text-transform: uppercase
+	color: $nephritis
+	padding: 8px
+	border-radius: 2px
+	border: 1px solid transparent
+	border-bottom: 2px solid transparent
+	display: inline-block
+	margin-right: 20px
 
+	&:hover
+		background: $emerald
+		color: white
+		border-color: $nephritis
 
 .a-button
 	font-family: $montserrat
@@ -60,3 +85,15 @@
 	font-size: 25px
 	color: $asbestos
 
+
+.primary-nav
+	padding-top: 12px
+	text-align: right
+
+
+h1
+	font-family: $montserrat
+	color: $midnight-blue
+	font-size: 40px
+	border-bottom: 2px solid
+	padding: 20px 0px

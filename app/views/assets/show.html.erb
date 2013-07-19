@@ -1,42 +1,59 @@
+<% content_for :styles do %>
+<%= stylesheet_link_tag "crud" %>
+<% end %>
+
+
 <section class="row">
 
 <div class="large-12 colums">
 
-<h1>Asset: <%= @asset.name %></h1>
+<h1><%= @asset.name %></h1>
 
 
-<span class="label-value">UUID:</span>
-<p class="value"><%= @asset.uuid %></p>
 
-<br />
-<br />
-<%= link_to "Borrowed Status", borrow_asset_url(@asset) %>
-<br />
-<br />
+<div class="row">
+<section class="large-6 columns">
+  <span class="label-value">UUID:</span>
+  <p class="value"><%= @asset.uuid %></p>
 
-<span class="label-value">Description:</span>
-<p class="value"><%= @asset.description %></p>
+  <br />
+  <br />
+  <%= link_to "Borrowed Status", borrow_asset_url(@asset) %>
+  <br />
+  <br />
 
-<span class="label-value">Notes:</span>
-<p class="value"><%= @asset.notes %></p>
+  <span class="label-value">Description:</span>
+  <p class="value"><%= @asset.description %></p>
 
-<span class="label-value">Is shared resource:</span>
-<p class="value"><%= @asset.shared_resource? %></p>
+  <span class="label-value">Notes:</span>
+  <p class="value"><%= @asset.notes %></p>
 
-<div>
+  <span class="label-value">Is shared resource:</span>
+  <p class="value"><%= @asset.shared_resource? %></p>
+
+
+
+</section>
+
+
+<section class="large-6 columns paper-trail">
   <h2>Asset History</h2>
-  <%= render partial: "asset_logs/asset_logs_table", locals: { asset_logs: @asset_logs } %>
+  <%= render partial: "asset_logs/asset_logs_list", locals: { asset_logs: @asset_logs } %>
+</section>
+
+<section class="large-12 columns">
+
+  <%= link_to "Back to index", assets_path, :class =>"button" %>
+
+  <%= link_to "Edit", edit_asset_path(@asset), :class =>"button" %>
+
+  <a href="#" class="button" data-reveal-id="printTagModal">
+    Print QR Code Tag
+  </a> 
+</section>
 </div>
 
-<hr>
 
-<%= link_to "Back to index", assets_path, :class =>"button" %>
-
-<%= link_to "Edit", edit_asset_path(@asset), :class =>"button" %>
-
-<a href="#" class="button" data-reveal-id="printTagModal">
-  Print QR Code Tag
-</a> 
 
 </div>
 
