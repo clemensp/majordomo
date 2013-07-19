@@ -6,6 +6,9 @@
 <div class="large-12 columns">
 	<table width="100%">
   <thead>
+    <th>
+      &nbsp;
+    </th>
     <th width="30%">
       Name
     </th>
@@ -23,38 +26,62 @@
     </th>
   </thead>
 
+  <tbody>
   <% @assets.each do |asset| %>
-    <tbody>
-      <tr>
-        <td>
-          <%= link_to asset.name, asset_path(asset) %>
-        </td>
-        <td>
-          <%= asset.status %>
-        </td>
-        <td>
-          <%= asset.shared_resource? %>
-        </td>
-        <td>
-          <%= asset.borrower.try(:name) %>
-        </td>
-        <td>
-          <%= asset.updated_at %>
-        </td>
-      </tr>
-    </tbody>
+    <tr>
+      <td>
+        <input name="print_asset_tag" type="checkbox" value="<%= asset.id %>" class="print-asset-tag-checkbox" />
+      </td>
+      <td>
+        <%= link_to asset.name, asset_path(asset) %>
+      </td>
+      <td>
+        <%= asset.status %>
+      </td>
+      <td>
+        <%= asset.shared_resource? %>
+      </td>
+      <td>
+        <%= asset.borrower.try(:name) %>
+      </td>
+      <td>
+        <%= asset.updated_at %>
+      </td>
+    </tr>
   <% end %>
+  </tbody>
 </table>
 
 
 <%= link_to "Create", new_asset_path(@asset), :class => "button" %>
 
+<a href="#" class="button print-selected-tags">
+  Print Selected Tags
+</a> 
+
+
 </div>
-
-
-
 </section>
 
+<div id="printTagModal" class="reveal-modal large">
+  <h2>Print Options</h2>
+  <p class="lead">Select the areas on the sheet on which to print the labels.</p>
 
+  <div class="gridster" style="width: 500px; height: 500px;">
+    <ul>
+      <li data-row="1" data-col="1" data-sizex="2" data-sizey="1"></li>
+      <li data-row="2" data-col="1" data-sizex="2" data-sizey="1"></li>
+      <li data-row="3" data-col="1" data-sizex="2" data-sizey="1"></li>
+      <li data-row="4" data-col="1" data-sizex="2" data-sizey="1"></li>
+      <li data-row="5" data-col="1" data-sizex="2" data-sizey="1"></li>
 
+      <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"></li>
+      <li data-row="2" data-col="2" data-sizex="2" data-sizey="1"></li>
+      <li data-row="3" data-col="2" data-sizex="2" data-sizey="1"></li>
+      <li data-row="4" data-col="2" data-sizex="2" data-sizey="1"></li>
+      <li data-row="5" data-col="2" data-sizex="2" data-sizey="1"></li>
+    </ul>
+  </div>
+</div>
 
+<%= stylesheet_link_tag 'jquery.gridster' %>

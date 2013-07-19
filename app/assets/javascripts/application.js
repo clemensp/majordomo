@@ -13,5 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery.gridster
+//= require print_asset_tags
+
 
 $(document).foundation();
