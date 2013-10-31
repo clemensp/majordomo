@@ -14,7 +14,7 @@
 <div class="row">
 <section class="large-6 columns assetInfo">
 
-  <span class="label-value">shared resource:</span>
+  <span class="label-value">Shared resource:</span>
   <p class="value"><%= @asset.shared_resource? %></p>
 
   <span class="label-value">Description:</span>
@@ -23,14 +23,17 @@
   <span class="label-value">Notes:</span>
   <p class="value"><%= @asset.notes %></p>
 
-  <!-- <br />
-  <br />
-  <%= link_to "Borrowed Status", borrow_asset_url(@asset) %>
-  <br />
-  <br /> -->
-
   <span class="label-value">UUID:</span>
   <p class="value"><%= @asset.uuid %></p>
+
+  <h4>Borrow or Return asset</h4>
+  <%= render partial: "assets/borrow_or_return", locals: {asset: @asset} %>
+
+ <%= link_to "Edit", edit_asset_path(@asset), :class =>"a-button" %>
+
+  <a href="#" class="a-button" data-reveal-id="printTagModal">
+    Print QR Code Tag
+  </a> 
 
 </section>
 
@@ -44,16 +47,6 @@
   </div>
 </section>
 
-<section class="large-12 columns">
-
-<!--   <%= link_to "Back to index", assets_path, :class =>"a-button" %> -->
-
-  <%= link_to "Edit", edit_asset_path(@asset), :class =>"a-button" %>
-
-  <a href="#" class="a-button" data-reveal-id="printTagModal">
-    Print QR Code Tag
-  </a> 
-</section>
 </div>
 
 

@@ -1,0 +1,18 @@
+<% if asset.available? %>
+  <form action="<%= borrow_asset_path(asset) %>" method="POST">
+    This asset is currently available to borrow!
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+    <br />
+
+    <input type="submit" value="Borrow!" class="a-button" />
+
+  </form>
+<% else %>
+  <form action="<%= return_asset_path(asset) %>" method="POST">
+    Borrowed by: <%= asset.borrower.try(:name) %>
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+    <br />
+
+    <input type="submit" value="Return!" class="a-button" />
+  </form>
+<% end %>
