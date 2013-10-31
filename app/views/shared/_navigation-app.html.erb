@@ -8,8 +8,9 @@
 </div> 
 
 <nav class="small-12 large-10 columns">
- <%= link_to "Find Assets", admin_root_path, :class => "small-button" %> 
+ <%= link_to "Find Assets", assets_path, :class => "small-button" %> 
   <% if current_user.admin? %>
+    <%= link_to "Manage Assets", admin_root_path, :class => "small-button" %> 
     <%= link_to "Asset Log", asset_logs_path, :class => "small-button" %> 
     <%= link_to "Users", users_path, :class => "small-button" %> 
   <% else %>
