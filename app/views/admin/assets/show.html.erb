@@ -1,0 +1,109 @@
+<% content_for :styles do %>
+<%= stylesheet_link_tag "crud" %>
+<% end %>
+
+
+<section class="row">
+
+<div class="large-12 colums">
+
+<h1><%= @asset.name %></h1>
+
+
+
+<div class="row">
+<section class="large-6 columns">
+  <span class="label-value">UUID:</span>
+  <p class="value"><%= @asset.uuid %></p>
+
+  <br />
+  <br />
+  <%= link_to "Borrowed Status", borrow_asset_url(@asset) %>
+  <br />
+  <br />
+
+  <span class="label-value">Description:</span>
+  <p class="value"><%= @asset.description %></p>
+
+  <span class="label-value">Notes:</span>
+  <p class="value"><%= @asset.notes %></p>
+
+  <span class="label-value">Is shared resource:</span>
+  <p class="value"><%= @asset.shared_resource? %></p>
+
+
+
+</section>
+
+
+<section class="large-6 columns paper-trail">
+  <h2>Asset History</h2>
+  <%= render partial: "asset_logs/asset_logs_list", locals: { asset_logs: @asset_logs } %>
+</section>
+
+<section class="large-12 columns">
+
+  <%= link_to "Back to index", admin_assets_path, :class =>"a-button" %>
+
+  <%= link_to "Edit", edit_asset_path(@asset), :class =>"a-button" %>
+
+  <a href="#" class="a-button" data-reveal-id="printTagModal">
+    Print QR Code Tag
+  </a> 
+</section>
+</div>
+
+
+
+</div>
+
+</section>
+
+<div id="printTagModal" class="reveal-modal medium">
+  <h2>Print Options</h2>
+  <p class="lead">Select the area on the sheet on which to print the label.</p>
+  
+  <table>
+    <tr>
+      <td width="80">
+        <%= link_to "Label 1", qrcode_asset_path(@asset, format: 'pdf', 'label[1]' => @asset.id), target: '_blank' %>
+      </td>
+      <td width="80">
+        <%= link_to "Label 2", qrcode_asset_path(@asset, format: 'pdf', 'label[2]' => @asset.id), target: '_blank'  %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Label 3", qrcode_asset_path(@asset, format: 'pdf', 'label[3]' => @asset.id), target: '_blank'  %>
+      </td>
+      <td>
+        <%= link_to "Label 4", qrcode_asset_path(@asset, format: 'pdf', 'label[4]' => @asset.id), target: '_blank'  %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Label 5", qrcode_asset_path(@asset, format: 'pdf', 'label[5]' => @asset.id), target: '_blank'  %>
+      </td>
+      <td>
+        <%= link_to "Label 6", qrcode_asset_path(@asset, format: 'pdf', 'label[6]' => @asset.id), target: '_blank'  %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Label 7", qrcode_asset_path(@asset, format: 'pdf', 'label[7]' => @asset.id), target: '_blank'  %>
+      </td>
+      <td>
+        <%= link_to "Label 8", qrcode_asset_path(@asset, format: 'pdf', 'label[8]' => @asset.id), target: '_blank'  %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Label 9", qrcode_asset_path(@asset, format: 'pdf', 'label[9]' => @asset.id), target: '_blank'  %>
+      </td>
+      <td>
+        <%= link_to "Label 10", qrcode_asset_path(@asset, format: 'pdf', 'label[10]' => @asset.id), target: '_blank'  %>
+      </td>
+    </tr>
+  </table>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
