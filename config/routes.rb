@@ -16,6 +16,7 @@ Majordomo::Application.routes.draw do
 
   namespace :admin do
     root :to => 'assets#index'
+    resources :assets
   end
   
   match '/:id' => "shortener/shortened_urls#show"
