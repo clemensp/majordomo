@@ -4,6 +4,9 @@
 
 
 <section class="row">
+<div class="large-12 columns ">
+  <%= link_to "New Asset", new_asset_path(@asset), :class => "a-button createButton" %>
+</div>
 <div class="large-12 columns">
 	<h1>All Assets</h1>
 </div>
@@ -58,9 +61,6 @@
   <% end %>
   </tbody>
 </table>
-
-
-<%= link_to "Create an asset to track it", new_asset_path(@asset), :class => "a-button" %>
 
 <a href="#" class="a-button print-selected-tags">
   Print ID tags for selected assets

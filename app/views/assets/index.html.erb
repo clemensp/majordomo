@@ -4,20 +4,12 @@
 
 
 <section class="row">
-<div class="large-12 columns ">
-	<h1>Find Assets</h1>
-
-  <%= link_to "New Asset", new_asset_path(@asset), :class => "a-button createButton" %>
-</div>
-
 <div class="large-12 columns">
+  <h1>Find Assets</h1>
 	<table width="100%">
     
   <thead>
-    <th width="5%">
-      &nbsp;
-    </th>
-    <th width="20%">
+    <th width="25%">
       Name
     </th>
     <th width="35%">
@@ -35,9 +27,6 @@
   <% @assets.each do |asset| %>
     <tr class='asset-row' data-asset-name='<%= asset.name %>'>
       <td>
-        <input name="print_asset_tag" type="checkbox" value="<%= asset.id %>" class="print-asset-tag-checkbox" />
-      </td>
-      <td>
         <%= link_to asset.name, asset_path(asset) %>
       </td>
       <td>
@@ -53,11 +42,6 @@
   <% end %>
   </tbody>
 </table>
-
-<a href="#" class="a-button print-selected-tags">
-  Print ID tags for selected assets
-</a> 
-
 
 </div>
 </section>
