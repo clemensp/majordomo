@@ -8,8 +8,13 @@
 </div> 
 
 <nav class="small-12 large-10 columns">
- <%= link_to "View tracked Assets", assets_path, :class => "small-button" %> 
-  <%= link_to "View the Asset log", asset_logs_path, :class => "small-button" %> 
+ <%= link_to "Assets", admin_root_path, :class => "small-button" %> 
+  <% if current_user.admin? %>
+    <%= link_to "Asset log", asset_logs_path, :class => "small-button" %> 
+    <%= link_to "Users", users_path, :class => "small-button" %> 
+  <% else %>
+    <%= link_to "My Assets", user_path(current_user), :class => "small-button" %> 
+  <% end %>
  <%= link_to "Sign out", destroy_user_session_url, method: :delete, :class => "a-button" %>
 
 
