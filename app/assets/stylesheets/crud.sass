@@ -1,30 +1,50 @@
 @import "globals"
+@import "mixins"
 
-.paper-trail
-	overflow: hidden
-	background: $wet-asphalt
+.paperTrail
 	margin-top: -100px
-	padding: 10px
+	overflow: hidden
+	padding-bottom: 40px
 	width: 45%
-	border: 5px solid rgba(0,0,0,0.1)
+
+.paperTrail-title
+	+browserPrefix($property: box-shadow, $value: 0 3px 2px -2px rgba(0,0,0,0.4))
+	+browserPrefix($property: border-radius, $value: 2px)
+	background: #56697c
+	margin: 0 0 -20px 0
+	position: relative
+	z-index: 10
 
 	h2
 		font-size: 20px
+		color: #FFF
 		text-transform: uppercase
 		font-family: $montserrat
-		color: $concrete
+		font-weight: 400
 		text-align: center
 		border-bottom: 1px solid rgba(255,255,255,0.1)
 		padding: 16px 0px 16px 0px
 
-	.activity
-		li
-			list-style: none
-			color: white
-			padding: 10px 5px
-			font-size: 18px
-			line-height: 1.5em
-			border-bottom: 1px solid $midnight-blue
+.paperTrail-content
+	width: 98%
+	margin: 0 auto
+	padding: 30px 30px 10px
+	box-sizing: border-box
+	background: #fcfcfc
+	border: 1px solid #ddd
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15), 0 10px 0 -5px #eee, 0 10px 1px -4px rgba(0,0,0,0.15), 0 20px 0 -10px #eee, 0 20px 1px -9px rgba(0,0,0,0.15)
 
-			a
-				color: $emerald
+.paperTrail-content:last-child 
+	border-bottom: none
+
+.paperTrail-activity
+	li
+		list-style: none
+		color: #444
+		padding: 10px 0
+		font-size: 16px
+		line-height: 1.5em
+		border-bottom: 1px dashed #c4c4c4
+
+		a
+			color: $emerald
