@@ -5,25 +5,28 @@
 
 <section class="row">
 <div class="large-12 columns">
-	<h1>Available Assets</h1>
+	<h1>All Assets</h1>
 </div>
 
 <div class="large-12 columns">
 	<table width="100%">
   <thead>
-    <th width="5%">
+    <th>
       &nbsp;
     </th>
-    <th width="20%">
+    <th width="30%">
       Name
-    </th>
-    <th width="35%">
-      Description
     </th>
     <th width="15%">
       Status
     </th>
-    <th width="25%">
+    <th width="15%">
+      Shared?
+    </th>
+    <th width="20%">
+      Borrower
+    </th>
+    <th width="20%">
       Modified
     </th>
   </thead>
@@ -38,10 +41,13 @@
         <%= link_to asset.name, asset_path(asset) %>
       </td>
       <td>
-        <%= asset.description %>
+        <%= asset.status %>
       </td>
       <td>
-        <%= asset.status %>
+        <%= asset.shared_resource? %>
+      </td>
+      <td 
+        <%= asset.borrower.try(:name) %>
       </td>
       <td>
         <%= asset.updated_at %>
@@ -51,6 +57,8 @@
   </tbody>
 </table>
 
+
+<%= link_to "Create an asset to track it", new_asset_path(@asset), :class => "a-button" %>
 
 <a href="#" class="a-button print-selected-tags">
   Print ID tags for selected assets

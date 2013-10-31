@@ -1,8 +1,8 @@
-class AssetsController < ApplicationController
+class Admin::AssetsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @assets = Asset.where("shared_resource = true")
+    @assets = Asset.all
   end
 
   def show

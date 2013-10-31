@@ -29,7 +29,6 @@ group :assets do
 end
 
 gem 'jquery-rails', '1.0.19'#foundation relies on jQuery 1.7.1
-gem 'cups'
 
 group :development, :test do
   gem "rspec-rails"
