@@ -7,7 +7,7 @@
  <body>
 Dear <%= @borrower.name %>, <br><br>
 
-It appears you are still borrowing some shared assets. Please follow the links below and return them at your earliest convenience:<br><br>
+It appears you are still borrowing some shared assets. Please return them at your earliest convenience by following the links below:<br><br>
 
 <% @assets.each do |asset| %>
   <%= link_to asset.name, asset_url(asset) %> <br>
