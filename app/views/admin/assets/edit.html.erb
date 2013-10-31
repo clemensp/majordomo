@@ -1,0 +1,22 @@
+
+<br/>
+<section class="row">
+
+<div class="large-6 columns">
+
+<%= form_for @asset, :url => admin_asset_path(@asset) do %>
+  <%= render partial: "assets/fields" %>
+
+  <label>
+  Is assigned to:
+  <%= select_tag "asset[borrower_id]", options_for_select(user_choices, user_choices.first) %>
+  </label>
+
+  <input type="submit" value="Save!" class="a-button"/>
+  <%= link_to "Cancel", admin_asset_path(@asset), :class => "a-button" %>
+<% end %>
+
+</div>
+
+</section>
+

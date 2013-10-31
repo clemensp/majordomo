@@ -59,7 +59,7 @@ class AssetsController < ApplicationController
       
       BorrowedAssetNotifier.notify_borrowed_asset(current_user, @asset).deliver
       
-      redirect_to :action => :borrowed_status, uuid: @asset.uuid
+      redirect_to asset_path @asset
     end
   end
 
@@ -70,7 +70,7 @@ class AssetsController < ApplicationController
 
       @asset.return
 
-      redirect_to :action => :borrowed_status, uuid: @asset.uuid
+      redirect_to asset_path @asset
     end
   end
 
