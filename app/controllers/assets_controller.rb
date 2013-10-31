@@ -56,7 +56,9 @@ class AssetsController < ApplicationController
       l.record_asset @asset
 
       @asset.borrow_for(current_user)
-
+      
+      BorrowedAssetNotifier.notify_borrowed_asset(current_user, @asset).deliver
+      
       redirect_to :action => :borrowed_status, uuid: @asset.uuid
     end
   end

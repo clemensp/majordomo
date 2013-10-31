@@ -6,7 +6,8 @@ class BorrowedAssetReminder < ActionMailer::Base
     @assets = assets
     mail(
       to: borrower.email,
-      subject: "Shared resources overdue"
+      subject: "Nulogy HQ Shared Assets Overdue",
+      reply_to: "office@nulogy.com"
     )
   end
 end
