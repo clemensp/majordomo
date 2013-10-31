@@ -2,7 +2,11 @@ class Admin::AssetsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @assets = Asset.all
+    if current_user.admin?
+      @assets = Asset.all
+    else
+      redirect_to assets_path
+    end
   end
 
   def show

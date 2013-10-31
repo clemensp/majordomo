@@ -46,8 +46,10 @@
       <td>
         <%= asset.shared_resource? %>
       </td>
-      <td 
-        <%= asset.borrower.try(:name) %>
+      <td> 
+        <% if asset.borrower %>
+          <%= link_to asset.borrower.name, user_path(asset.borrower)  %>
+        <% end %>
       </td>
       <td>
         <%= asset.updated_at %>
