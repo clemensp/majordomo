@@ -42,6 +42,7 @@
 
 .paperTrail-activity
 	li
+		display: none
 		list-style: none
 		color: #444
 		padding: 10px 0
@@ -49,6 +50,9 @@
 		line-height: 1.5em
 		border-bottom: 1px dashed #c4c4c4
 
+	li:nth-of-type(-n+4)
+		display: list-item
+		
 		a
 			color: $emerald
 
