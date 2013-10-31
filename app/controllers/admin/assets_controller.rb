@@ -25,7 +25,7 @@ class Admin::AssetsController < ApplicationController
       @asset = Asset.create(params[:asset])
       l.record_asset @asset
 
-      redirect_to asset_path(@asset)
+      redirect_to admin_asset_path(@asset)
     end
   end
 
@@ -36,9 +36,15 @@ class Admin::AssetsController < ApplicationController
   def update
     @asset = Asset.find(params[:id])
 
+    if params[:asset][:borrower_id]
+      params[:asset][:status] = "borrowed"
+      @asset.borrower = User.find(params[:asset][:borrower_id].to_i)
+    else
+      params[:asset][:status] = "available"
+    end
     @asset.update_attributes(params[:asset])
 
-    redirect_to asset_path(@asset)
+    redirect_to admin_asset_path(@asset)
   end
 
   def qrcode
@@ -61,7 +67,7 @@ class Admin::AssetsController < ApplicationController
 
       @asset.borrow_for(current_user)
 
-      redirect_to :action => :borrowed_status, uuid: @asset.uuid
+      redirect_to admin_asset_path @asset
     end
   end
 
@@ -72,7 +78,7 @@ class Admin::AssetsController < ApplicationController
 
       @asset.return
 
-      redirect_to :action => :borrowed_status, uuid: @asset.uuid
+      redirect_to admin_asset_path @asset
     end
   end
 

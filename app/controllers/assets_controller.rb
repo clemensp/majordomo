@@ -58,8 +58,8 @@ class AssetsController < ApplicationController
       @asset.borrow_for(current_user)
 
       BorrowedAssetNotifier.notify_borrowed_asset(current_user, @asset).deliver
-
-      redirect_to :back
+      
+      redirect_to asset_path @asset
     end
   end
 
@@ -70,7 +70,7 @@ class AssetsController < ApplicationController
 
       @asset.return
 
-      redirect_to :back
+      redirect_to asset_path @asset
     end
   end
 
