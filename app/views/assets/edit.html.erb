@@ -2,10 +2,12 @@
 
 <div class="large-12 columns">
 
-<%= form_for @asset do %>
+  <h1>Edit Asset</h1>
+
+  <%= form_for @asset do %>
   <%= render partial: "fields" %>
 
-  <input type="submit" value="Save!" />
+  <input type="submit" value="Update Asset" class="a-button" />
 <% end %>
 
 </div>

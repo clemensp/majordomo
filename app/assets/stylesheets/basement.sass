@@ -10,6 +10,7 @@ body
 	background: rgba(0,0,0,0.03)
 
 	.row
+		min-width: 445px
 
 	.logo
 		font-size: 20px
@@ -75,6 +76,9 @@ body
 		color: white
 		transition: all 50ms ease-in
 
+	&:focus
+		outline: none
+
 #notice-msg
 	background: $clouds
 	width: 100%
@@ -136,8 +140,45 @@ span.label-value
 	text-transform: uppercase
 
 p.value
-	font-size: 20px
-	color: rgba(0,0,0,0.9)
+	background: #f9f9f9
+	font-size: 16px
+	margin-top: 5px
+	padding: 6px 8px
+	color: #444
 
 input[type="submit"]
 	background: white
+
+// Buttons
+
+.createButton
+	position: absolute
+	right: 18px
+	top: 35px
+
+// Tables
+
+table
+	border-collapse: collapse
+	border-bottom: 20px
+	font-size: 15px
+	border: none
+
+thead
+	text-transform: uppercase
+	background: #eaeaea
+	font-weight: bold
+	color: #FFFFFF
+
+td, th
+	padding: 10px 14px
+
+tr:nth-of-type(even)
+	background: #F7F7F7
+
+// New Item
+
+.newAsset
+	overflow: hidden
+	display: block
+	padding: 40px 0 0 0

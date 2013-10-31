@@ -12,15 +12,10 @@
 
 
 <div class="row">
-<section class="large-6 columns">
-  <span class="label-value">UUID:</span>
-  <p class="value"><%= @asset.uuid %></p>
+<section class="large-6 columns assetInfo">
 
-  <br />
-  <br />
-  <%= link_to "Borrowed Status", borrow_asset_url(@asset) %>
-  <br />
-  <br />
+  <span class="label-value">shared resource:</span>
+  <p class="value"><%= @asset.shared_resource? %></p>
 
   <span class="label-value">Description:</span>
   <p class="value"><%= @asset.description %></p>
@@ -28,22 +23,30 @@
   <span class="label-value">Notes:</span>
   <p class="value"><%= @asset.notes %></p>
 
-  <span class="label-value">Is shared resource:</span>
-  <p class="value"><%= @asset.shared_resource? %></p>
+  <!-- <br />
+  <br />
+  <%= link_to "Borrowed Status", borrow_asset_url(@asset) %>
+  <br />
+  <br /> -->
 
-
+  <span class="label-value">UUID:</span>
+  <p class="value"><%= @asset.uuid %></p>
 
 </section>
 
 
-<section class="large-6 columns paper-trail">
-  <h2>Asset History</h2>
-  <%= render partial: "asset_logs/asset_logs_list", locals: { asset_logs: @asset_logs } %>
+<section class="large-6 columns paperTrail">
+  <div class="paperTrail-title">
+    <h2>Asset History</h2>
+  </div>
+  <div class="paperTrail-content">
+    <%= render partial: "asset_logs/asset_logs_list", locals: { asset_logs: @asset_logs } %>
+  </div>
 </section>
 
 <section class="large-12 columns">
 
-  <%= link_to "Back to index", assets_path, :class =>"a-button" %>
+<!--   <%= link_to "Back to index", assets_path, :class =>"a-button" %> -->
 
   <%= link_to "Edit", edit_asset_path(@asset), :class =>"a-button" %>
 

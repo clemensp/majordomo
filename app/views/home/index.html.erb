@@ -5,7 +5,16 @@
 <div class="main-page-wrapper">
 
 	<section class="row main-page">
-		<section class="small-12 large-5 columns">
+
+	<section class="summary large-7 columns">
+		<h3>Welcome to Majordomo</h3>
+
+		<p>Majordomo is a simple asset tracking application for all of Nulogy's assets and staff. Sign in with your Nulogy google account to get started</p>
+
+		<%= link_to "Sign in to get started", user_omniauth_authorize_url(provider: "google"), :class => "a-button" %>
+	</section>
+
+	<section class="small-12 large-5 columns">
 
 			<ul class="welcome-message">
 				<li class="first">Create Assets</li>
@@ -16,14 +25,6 @@
 
 		</section>
 
-	<section class="summary large-7 columns">
-		<h3>Welcome to Majordomo</h3>
-
-		<p>Majordomo is a simple asset tracking application for all of Nulogy's assets and staff. Sign in with your Nulogy google account to get started</p>
-
-		<%= link_to "Sign in to get started", user_omniauth_authorize_url(provider: "google"), :class => "a-button" %>
-	</section>
-
 	</section>
 </div>
 
@@ -32,7 +33,7 @@
 <footer class="row footer">
 
 <div class="large-12 columns">
-<p>Majordomo is a Hackday project by Andrew Shewchenko, Clemens Park, Lukas Beaton &amp; Syed Ahmed Hussaini</p>
+<p>Majordomo is a Hackday project by Andrew Shewchenko, Clemens Park, Stephanie Mills, <br/>Robert Dooley, Darcy Voutt, Lukas Beaton &amp; Syed Ahmed Hussaini</p>
 </div>
 
 </footer>

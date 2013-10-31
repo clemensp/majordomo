@@ -15,8 +15,8 @@
       </th>
     </thead>
 
-    <% asset_logs.each do |l| %>
-      <tbody>
+    <tbody>
+      <% asset_logs.each do |l| %>
         <tr>
           <td>
             <%= link_to l.asset.name, asset_path(l.asset) %>
@@ -31,7 +31,7 @@
             <%= l.created_at %>
           </td>
         </tr>
-      </tbody>
-    <% end %>
+        <% end %>
+    </tbody>
   </table>
 </div>

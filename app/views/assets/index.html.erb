@@ -4,12 +4,15 @@
 
 
 <section class="row">
-<div class="large-12 columns">
-	<h1>Available Assets</h1>
+<div class="large-12 columns ">
+	<h1>Find Assets</h1>
+
+  <%= link_to "New Asset", new_asset_path(@asset), :class => "a-button createButton" %>
 </div>
 
 <div class="large-12 columns">
 	<table width="100%">
+    
   <thead>
     <th width="5%">
       &nbsp;
@@ -50,7 +53,6 @@
   <% end %>
   </tbody>
 </table>
-
 
 <a href="#" class="a-button print-selected-tags">
   Print ID tags for selected assets
