@@ -12,8 +12,8 @@ class UsersController < ApplicationController
     if (current_user.admin? || params[:id].to_i == current_user.id)
       @user = User.find(params[:id])
       @asset_logs = AssetLog.fetch_all_for_user(current_user)
-      @borrowed_assets = Asset.where("borrower_id = ? and shared_resource = true", current_user.id)
-      @assigned_assets = Asset.where("borrower_id = ? and shared_resource = false", current_user.id)
+      @borrowed_assets = Asset.where("borrower_id = ? and shared_resource = true", params[:id])
+      @assigned_assets = Asset.where("borrower_id = ? and shared_resource = false", params[:id])
     else
       redirect_to user_path current_user
     end
