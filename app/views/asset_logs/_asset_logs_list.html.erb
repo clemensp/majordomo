@@ -1,14 +1,10 @@
 <ul class="paperTrail-activity">
-
-  <% i = 0; begin %>
   
     <% asset_logs.each do |l| %>
     <li>
       <%= link_to l.asset.name, asset_path(l.asset) %> was <%= l.action %> by <%= l.user.email %> at <%= l.created_at %>
     </li>
     <% end %>
-    <% i += 1 %>
-  <% end while i < 6 %>
     
 </ul>
 
