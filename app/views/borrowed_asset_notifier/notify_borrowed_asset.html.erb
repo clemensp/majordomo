@@ -7,7 +7,7 @@
  <body>
 Dear <%= @borrower.name %>, <br><br>
 
-You've succesfully borrowed <%= link_to asset.name, asset_url(asset) %>. Please return it when you're finished so others can use it!<br><br>
+You've succesfully borrowed <%= link_to @asset.name, asset_url(@asset) %>. Please return it when you're finished so others can use it!<br><br>
 
 Thanks,<br><br>
 
