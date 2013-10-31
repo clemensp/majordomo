@@ -14,6 +14,8 @@
 <div class="row">
 <section class="large-6 columns assetInfo">
 
+  <%= render partial: "assets/borrow_or_return", locals: {asset: @asset} %>
+
   <span class="label-value">Shared resource:</span>
   <p class="value"><%= @asset.shared_resource? %></p>
 
@@ -25,15 +27,12 @@
 
   <span class="label-value">UUID:</span>
   <p class="value"><%= @asset.uuid %></p>
-
-  <h4>Borrow or Return asset</h4>
-  <%= render partial: "assets/borrow_or_return", locals: {asset: @asset} %>
-
- <%= link_to "Edit", edit_asset_path(@asset), :class =>"a-button" %>
-
-  <a href="#" class="a-button" data-reveal-id="printTagModal">
+  
+  <a href="#" class="a-button marginRight" data-reveal-id="printTagModal">
     Print QR Code Tag
   </a> 
+
+  <%= link_to "Edit", edit_asset_path(@asset), :class =>"a-button" %>
 
 </section>
 
