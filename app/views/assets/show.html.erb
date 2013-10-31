@@ -15,10 +15,6 @@
 <section class="large-6 columns">
   <span class="label-value">UUID:</span>
   <p class="value"><%= @asset.uuid %></p>
-
-  <br />
-  <br />
-  <%= link_to "Borrowed Status", borrow_asset_url(@asset) %>
   <br />
   <br />
 
@@ -32,6 +28,10 @@
   <p class="value"><%= @asset.shared_resource? %></p>
 
 
+  <h4>Borrow or Return asset</h4>
+  <%= render partial: "assets/borrow_or_return", locals: {asset: @asset} %>
+
+
 
 </section>
 
@@ -42,7 +42,6 @@
 </section>
 
 <section class="large-12 columns">
-
   <%= link_to "Back to index", assets_path, :class =>"a-button" %>
 
   <%= link_to "Edit", edit_asset_path(@asset), :class =>"a-button" %>

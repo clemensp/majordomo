@@ -56,12 +56,10 @@ class AssetsController < ApplicationController
       l.record_asset @asset
 
       @asset.borrow_for(current_user)
-      
-      if @asset.shared_resource
-        BorrowedAssetNotifier.notify_borrowed_asset(current_user, @asset).deliver
-      end
-      
-      redirect_to :action => :borrowed_status, uuid: @asset.uuid
+
+      BorrowedAssetNotifier.notify_borrowed_asset(current_user, @asset).deliver
+
+      redirect_to :back
     end
   end
 
@@ -72,7 +70,7 @@ class AssetsController < ApplicationController
 
       @asset.return
 
-      redirect_to :action => :borrowed_status, uuid: @asset.uuid
+      redirect_to :back
     end
   end
 
