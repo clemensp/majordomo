@@ -1,0 +1,5 @@
+@import "mixins.sass"
+
+input[type=text], input[type=password], input[type=textarea], select
+  +browserPrefix($property: border-radius, $value: 4px)
+  border: 1px solid #DDD
