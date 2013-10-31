@@ -13,24 +13,22 @@
 
 <div class="row">
 <section class="large-6 columns">
-  <span class="label-value">UUID:</span>
-  <p class="value"><%= @asset.uuid %></p>
-
-  <span class="label-value">Status:</span>
-
+  
   <% if @asset.borrower == current_user %>
-    <p class="value">Borrowed by you</p>
     <form action="<%= return_admin_asset_path(@asset) %>" method="POST">
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
       <input type="submit" value="Return!" class="a-button" />
     </form>
+    <span class="label-value">Status:</span>
+    <p class="value">Borrowed by you</p>
+    
   <% elsif @asset.available? %>
-    <p class="value">Available</p>
     <form action="<%= borrow_admin_asset_path(@asset) %>" method="POST">
         <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
       <input type="submit" value="Borrow!" class="a-button" />
-
     </form>
+    <span class="label-value">Status:</span>
+    <p class="value">Available</p>
   <% else %>
     <p class="value">Borrowed by <%= @asset.borrower.name %></p>
     <form action="<%= return_admin_asset_path(@asset) %>" method="POST">
@@ -39,35 +37,35 @@
     </form>
   <% end %>
 
+  <span class="label-value">Shared resource:</span>
+  <p class="value"><%= @asset.shared_resource? %></p>
+
   <span class="label-value">Description:</span>
   <p class="value"><%= @asset.description %></p>
 
   <span class="label-value">Notes:</span>
   <p class="value"><%= @asset.notes %></p>
 
-  <span class="label-value">Is shared resource:</span>
-  <p class="value"><%= @asset.shared_resource? %></p>
-
-
-
-</section>
-
-
-<section class="large-6 columns paper-trail">
-  <h2>Asset History</h2>
-  <%= render partial: "asset_logs/asset_logs_list", locals: { asset_logs: @asset_logs } %>
-</section>
-
-<section class="large-12 columns">
-
-  <%= link_to "Back to index", admin_assets_path, :class =>"a-button" %>
-
-  <%= link_to "Edit", edit_admin_asset_path(@asset), :class =>"a-button" %>
-
-  <a href="#" class="a-button" data-reveal-id="printTagModal">
+  <span class="label-value">UUID:</span>
+  <p class="value"><%= @asset.uuid %></p>
+  
+  <a href="#" class="a-button marginRight" data-reveal-id="printTagModal">
     Print QR Code Tag
   </a> 
+  <%= link_to "Edit", edit_admin_asset_path(@asset), :class =>"a-button" %>
+
 </section>
+
+
+<section class="large-6 columns paperTrail">
+  <div class="paperTrail-title">
+    <h2>Asset History</h2>
+  </div>
+  <div class="paperTrail-content">
+    <%= render partial: "asset_logs/asset_logs_list", locals: { asset_logs: @asset_logs } %>
+  </div>
+</section>
+
 </div>
 
 

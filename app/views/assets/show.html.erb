@@ -14,19 +14,19 @@
 <div class="row">
 <section class="large-6 columns assetInfo">
 
-  <span class="label-value">Status:</span>
   <% if @asset.borrower == current_user %>
-    <p class="value">Borrowed by you</p>
     <form action="<%= return_asset_path(@asset) %>" method="POST">
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
       <input type="submit" value="Return!" class="a-button" />
     </form>
+    <span class="label-value">Status:</span>
+    <p class="value">Borrowed by you</p>
   <% elsif @asset.available? %>
-    <p class="value">Available</p>
     <form action="<%= borrow_asset_path(@asset) %>" method="POST">
-        <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
-      <input type="submit" value="Borrow!" class="a-button" />
-
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+    <input type="submit" value="Borrow!" class="a-button" />
+    <span class="label-value">Status:</span>  
+    <p class="value">Available</p>
     </form>
   <% else %>
     <p class="value">Borrowed by <%= @asset.borrower.name %></p>
@@ -59,14 +59,6 @@
   </div>
 </section>
 
-<section class="large-12 columns">
-
-  <%= link_to "Back to index", assets_path, :class =>"a-button" %>
-
-  <a href="#" class="a-button" data-reveal-id="printTagModal">
-    Print QR Code Tag
-  </a> 
-</section>
 </div>
 
 
