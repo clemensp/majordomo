@@ -1,19 +1,19 @@
 <html lang="en-US">
   <head>
     <meta charset="UTF-8">
-    <title>Shared resources overdue</title>
+    <title>Nulogy HQ Shared Assets Overdue</title>
   </head>
 
  <body>
 Dear <%= @borrower.name %>, <br><br>
 
-It appears you are still borrowing some shared resources. Please follow the links below and return them at your earliest convenience:<br><br>
+It appears you are still borrowing some shared assets. Please follow the links below and return them at your earliest convenience:<br><br>
 
 <% @assets.each do |asset| %>
   <%= link_to asset.name, asset_url(asset) %> <br>
 <% end %>
-
-Thanks,
+<br>
+Thanks,<br><br>
 
 Your Majordomo
  </body>
