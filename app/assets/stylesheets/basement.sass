@@ -75,6 +75,9 @@ body
 		color: white
 		transition: all 50ms ease-in
 
+	&:focus
+		outline: none
+
 #notice-msg
 	background: $clouds
 	width: 100%
@@ -148,3 +151,23 @@ input[type="submit"]
 	position: absolute
 	right: 18px
 	top: 35px
+
+// Tables
+
+table
+	border-collapse: collapse
+	border-bottom: 20px
+	font-size: 15px
+	border: none
+
+thead
+	text-transform: uppercase
+	background: #eaeaea
+	font-weight: bold
+	color: #FFFFFF
+
+td, th
+	padding: 10px 14px
+
+tr:nth-of-type(even)
+	background: #F7F7F7
