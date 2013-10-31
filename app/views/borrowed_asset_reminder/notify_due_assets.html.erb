@@ -5,12 +5,12 @@
   </head>
 
  <body>
-Dear <%= @borrower.name %> (<%= @borrower.email %>),
+Dear <%= @borrower.name %>, <br><br>
 
-It appears the following shared resources are still being borrowed by you. Please return them and scan them in as Available at your earliest convenience:
+It appears you are still borrowing some shared resources. Please follow the links below and return them at your earliest convenience:<br><br>
 
 <% @assets.each do |asset| %>
-  <%= link_to asset.name, asset_url(asset) %>
+  <%= link_to asset.name, asset_url(asset) %> <br>
 <% end %>
 
 Thanks,
